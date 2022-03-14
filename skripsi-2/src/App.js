@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 
 import './App.css';
 import BarChart from './components/BarChart';
-import {appData} from './Data.json';
+import {AppData} from './Data.js';
 
 function App() {
   const [appData, setAppData] = useState({
-    label: appData.map((data) => data.info),
+    labels: AppData.map((data) => data.info),
     datasets: [
       {
-        label: "result",
-        data: appData.map((data) => data.app),
+        label: "app",
+        data: AppData.map((data) => data.jumlah),
       },
     ],
   });

@@ -10,6 +10,18 @@ import { PythonData } from './PythonData';
 import { JQMigrateData } from './JQueryMigrateData';
 import { JQueryData } from './JQueryData';
 
+function apacheColor(){
+  let color = [];
+  for(let i=0; i< ApacheData.length; i++){
+    if(ApacheData.info < 3){
+      color.push("FF0000");
+    }else{
+      color.push("0000FF");
+    }
+  }
+}
+
+//Create Chart with JSON data
 function App() {
   const [appData, setAppData] = useState({
     labels: AppData.map((data) => data.info),
@@ -28,7 +40,7 @@ function App() {
       {
         label: "Apache",
         data: ApacheData.map((data) => data.jumlah),
-        backgroundColor: ["orange"]
+        backgroundColor: apacheColor()
       },
     ],
   });

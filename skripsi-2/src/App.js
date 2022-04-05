@@ -10,6 +10,12 @@ import { PythonData } from './PythonData';
 import { JQMigrateData } from './JQueryMigrateData';
 import { JQueryData } from './JQueryData';
 
+import Table from './components/Table'
+
+//Create Table
+
+
+//Create Measurement Color
 function apacheColor(){
   let color = [];
   for(let i=0; i< ApacheData.length; i++){
@@ -102,6 +108,7 @@ function App() {
 
   return (
     <div className='App'>
+      <Table />
       <BarChart chartData={appData} />
       <BarChart chartData={apacheData} />
       <BarChart chartData={nginxData} />

@@ -12,24 +12,21 @@ import { JQueryData } from './JQueryData';
 
 import Table from './components/Table'
 
-//Create Table
-
-
 //Create Measurement Color
 function apacheColor(){
   let color = [];
   for(let i=0; i< ApacheData.length; i++){
     if(ApacheData.info < 3){
-      color.push("FF0000");
+      color.push("FF0000"); //merah
     }else{
-      color.push("0000FF");
+      color.push("0000FF"); //biru
     }
   }
 }
 
 //Create Chart with JSON data
 function App() {
-  const [appData, setAppData] = useState({
+  const [appData] = useState({
     labels: AppData.map((data) => data.info),
     datasets: [
       {
@@ -40,7 +37,7 @@ function App() {
     ],
   });
 
-  const [apacheData, setApacheData] = useState({
+  const [apacheData] = useState({
     labels: ApacheData.map((data) => data.info),
     datasets: [
       {
@@ -51,7 +48,7 @@ function App() {
     ],
   });
 
-  const [nginxData, setNginxData] = useState({
+  const [nginxData] = useState({
     labels: NginxData.map((data) => data.info),
     datasets: [
       {
@@ -62,7 +59,7 @@ function App() {
     ],
   });
 
-  const [phpData, setPhpData] = useState({
+  const [phpData] = useState({
     labels: PhpData.map((data) => data.info),
     datasets: [
       {
@@ -73,7 +70,7 @@ function App() {
     ],
   });
 
-  const [pythonData, setPythonData] = useState({
+  const [pythonData] = useState({
     labels: PythonData.map((data) => data.info),
     datasets: [
       {
@@ -84,7 +81,7 @@ function App() {
     ],
   });
 
-  const [jqmigrateData, setJQMigrateData] = useState({
+  const [jqmigrateData] = useState({
     labels: JQMigrateData.map((data) => data.info),
     datasets: [
       {
@@ -95,7 +92,7 @@ function App() {
     ],
   });
 
-  const [jqueryData, setJQueryData] = useState({
+  const [jqueryData] = useState({
     labels: JQueryData.map((data) => data.info),
     datasets: [
       {

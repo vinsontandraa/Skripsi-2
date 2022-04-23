@@ -13,16 +13,16 @@ import { JQueryData } from './JQueryData';
 import Table from './components/Table'
 
 //Create Measurement Color
-// function apacheColor(){
-//   let color = [];
-//   for(let i=0; i< ApacheData.length; i++){
-//     if(ApacheData.info < 3){
-//       color.push("FF0000"); //merah
-//     }else{
-//       color.push("0000FF"); //biru
-//     }
-//   }
-// }
+function apacheColor(){
+  let color = [];
+  for(let i=0; i< ApacheData.length; i++){
+    if(ApacheData.result == "UNSUPPORTED"){
+      color.push("FF0000"); //merah
+    }else{
+      color.push("0000FF"); //biru
+    }
+  }
+}
 
 //Create Chart with JSON data
 function App() {
@@ -43,7 +43,7 @@ function App() {
       {
         label: "Apache",
         data: ApacheData.map((data) => data.jumlah),
-        backgroundColor: ["orange"]
+        backgroundColor: apacheColor()
       },
     ],
   });

@@ -1,12 +1,6 @@
 export const ApacheData = [
   {
     "app": "Apache",
-    "info": "",
-    "jumlah": "2949180",
-    "result": "NON VERSIONED"
-  },
-  {
-    "app": "Apache",
     "info": "0.25",
     "jumlah": "4",
     "result": "UNSUPPORTED"

@@ -1,5 +1,4 @@
 export const PythonData = [
-  {  "app": "Python",  "info": "",  "jumlah": "360531",  "result": "NON VERSIONED"},
   {  "app": "Python",  "info": "1.5.2",  "jumlah": "11",  "result": "UNSUPPORTED"},
   {  "app": "Python",  "info": "2.2.1",  "jumlah": "7",  "result": "UNSUPPORTED"},
   {  "app": "Python",  "info": "2.2.2",  "jumlah": "4",  "result": "UNSUPPORTED"},

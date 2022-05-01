@@ -1,5 +1,4 @@
 export const PhpData = [
-  {  "app": "PHP",  "info": "",  "jumlah": "3455170",  "result": "NON VERSIONED"},
   {  "app": "PHP",  "info": ".",  "jumlah": "15",  "result": "UNSUPPORTED"},
   {  "app": "PHP",  "info": "1",  "jumlah": "1",  "result": "UNSUPPORTED"},
   {  "app": "PHP",  "info": "1.9.7.3.9",  "jumlah": "1",  "result": "UNSUPPORTED"},

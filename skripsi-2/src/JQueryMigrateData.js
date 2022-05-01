@@ -1,5 +1,4 @@
 export const JQMigrateData = [
-  {  "app": "jQuery Migrate",  "info": "",  "jumlah": "268962",  "result": "NON VERSIONED"},
   {  "app": "jQuery Migrate",  "info": ".",  "jumlah": "3",  "result": "UNSUPPORTED"},
   {  "app": "jQuery Migrate",  "info": "0",  "jumlah": "33",  "result": "UNSUPPORTED"},
   {  "app": "jQuery Migrate",  "info": "0.01499200",  "jumlah": "1",  "result": "UNSUPPORTED"},

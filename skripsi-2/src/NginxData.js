@@ -1,5 +1,4 @@
 export const NginxData = [
-  {  "app": "Nginx",  "info": "",  "jumlah": "5440268",  "result": "NON VERSIONED"},
   {  "app": "Nginx",  "info": "0.4.13",  "jumlah": "18",  "result": "UNSUPPORTED"},
   {  "app": "Nginx",  "info": "0.4.14",  "jumlah": "6",  "result": "UNSUPPORTED"},
   {  "app": "Nginx",  "info": "0.5.14",  "jumlah": "4",  "result": "UNSUPPORTED"},

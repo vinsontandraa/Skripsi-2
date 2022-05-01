@@ -1,5 +1,4 @@
 export const JQueryData = [
-  {  "app": "jQuery",  "info": "",  "jumlah": "24029",  "result": "NON VERSIONED"},
   {  "app": "jQuery",  "info": "(a",  "jumlah": "1",  "result": "UNSUPPORTED"},
   {  "app": "jQuery",  "info": ".",  "jumlah": "414",  "result": "UNSUPPORTED"},
   {  "app": "jQuery",  "info": "..",  "jumlah": "4",  "result": "UNSUPPORTED"},

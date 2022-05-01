@@ -9,98 +9,100 @@ import { JQMigrateData } from './JQueryMigrateData';
 import { JQueryData } from './JQueryData';
 
 import BasicTable from './components/Table/BasicTable';
-import UrlNumsites from "./json/url_all_result_table.json";
-import DataUnsupportedJson from "./json/category_per_jumlah_unsupported.json";
-import DataNumsites from "./json/numsites_app_result.json";
+import {URL_ALL_RESULT_TABLE} from "./json/url_all_result_table";
+import {CATEGORY_PER_UNSUPPORTED} from "./json/category_per_jumlah_unsupported";
+// import {DataUnsupportedJson} from './json/index'
+import {NUMSITES_APP_RESULT} from "./json/numsites_app_result";
+import { Title } from 'chart.js';
 
-//Create Table with JSON data
-const columnsUrl = [
-  {
-    Header: "Usage of technologies per site (top 10)",
-    columns: [
-      {
-        Header: "URL",
-        accessor: "url",
-      },
-      {
-        Header: "Supported",
-        accessor: "supported",
-      },
-      {
-        Header: "Unsupported",
-        accessor: "unsupported",
-      },
-      {
-        Header: "Not Versioned",
-        accessor: "not_versioned",
-      },
-      {
-        Header: "Non Conclusive",
-        accessor: "non_conclusive",
-      },
-    ],
-  },
-];
+// //Create Table with JSON data
+// const columnsUrl = [
+//   {
+//     Header: "Usage of technologies per site (top 10)",
+//     columns: [
+//       {
+//         Header: "URL",
+//         accessor: "url",
+//       },
+//       {
+//         Header: "Supported",
+//         accessor: "supported",
+//       },
+//       {
+//         Header: "Unsupported",
+//         accessor: "unsupported",
+//       },
+//       {
+//         Header: "Not Versioned",
+//         accessor: "not_versioned",
+//       },
+//       {
+//         Header: "Non Conclusive",
+//         accessor: "non_conclusive",
+//       },
+//     ],
+//   },
+// ];
 
-const columnsUnsupported = [
-  {
-    Header: "Number of Categories by Unsupported Version",
-    columns: [
-      {
-        Header: "Number of Unsupported = 0",
-        accessor: "n0",
-      },
-      {
-        Header: "Number of Unsupported = 1",
-        accessor: "n1",
-      },
-      {
-        Header: "Number of Unsupported = 2",
-        accessor: "n2",
-      },
-      {
-        Header: "Number of Unsupported = 3",
-        accessor: "n3",
-      },
-      {
-        Header: "Number of Unsupported >= 4",
-        accessor: "n4",
-      },
-    ],
-  },
-];
+// const columnsUnsupported = [
+//   {
+//     Header: "Number of Categories by Unsupported Version",
+//     columns: [
+//       {
+//         Header: "Number of Unsupported = 0",
+//         accessor: "n0",
+//       },
+//       {
+//         Header: "Number of Unsupported = 1",
+//         accessor: "n1",
+//       },
+//       {
+//         Header: "Number of Unsupported = 2",
+//         accessor: "n2",
+//       },
+//       {
+//         Header: "Number of Unsupported = 3",
+//         accessor: "n3",
+//       },
+//       {
+//         Header: "Number of Unsupported >= 4",
+//         accessor: "n4",
+//       },
+//     ],
+//   },
+// ];
 
-const columnsNumsites = [
-  {
-    Header: "Top 10 popular technologies",
-    columns: [
-      {
-        Header: "Num Sites",
-        accessor: "num_sites",
-      },
-      {
-        Header: "App",
-        accessor: "app",
-      },
-      {
-        Header: "Supported",
-        accessor: "supported",
-      },
-      {
-        Header: "Unsupported",
-        accessor: "unsupported",
-      },
-      {
-        Header: "Not Versioned",
-        accessor: "not_versioned",
-      },
-      {
-        Header: "Non Conclusive",
-        accessor: "non_conclusive",
-      },
-    ],
-  },
-];
+// const columnsNumsites = [
+//   {
+//     Header: "Top 10 popular technologies",
+//     columns: [
+//       {
+//         Header: "Num Sites",
+//         accessor: "num_sites",
+//       },
+//       {
+//         Header: "App",
+//         accessor: "app",
+//       },
+//       {
+//         Header: "Supported",
+//         accessor: "supported",
+//       },
+//       {
+//         Header: "Unsupported",
+//         accessor: "unsupported",
+//       },
+//       {
+//         Header: "Not Versioned",
+//         accessor: "not_versioned",
+//       },
+//       {
+//         Header: "Non Conclusive",
+//         accessor: "non_conclusive",
+//       },
+//     ],
+//   },
+// ];
 
 //Create Measurement Color
 function color(arr) {
@@ -192,9 +194,9 @@ function App() {
 
   return (
     <div className='App'>
-      <BasicTable data={DataUnsupportedJson} columns={columnsUnsupported} />
-      <BasicTable data={DataNumsites} columns={columnsNumsites} />
-      <BasicTable data={UrlNumsites} columns={columnsUrl} />
+      <BasicTable data={CATEGORY_PER_UNSUPPORTED} title="Number of Categories by Unsupported Version"/>
+      <BasicTable data={URL_ALL_RESULT_TABLE} title="Usage of technologies per site (top 10)" />
+      <BasicTable data={NUMSITES_APP_RESULT} title="Top 10 popular technologies" />
       <BarChart chartData={appData} />
       <BarChart chartData={apacheData} />
       <BarChart chartData={nginxData} />

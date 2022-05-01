@@ -1,3 +1,4 @@
+export const NUMSITES_APP_RESULT =
 [{
     "num_sites": "10.003.030",
     "app": "jQuery",

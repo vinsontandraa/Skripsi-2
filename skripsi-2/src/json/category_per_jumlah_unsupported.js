@@ -1,3 +1,4 @@
+export const CATEGORY_PER_UNSUPPORTED = 
 [
     {
       "n0": "2",

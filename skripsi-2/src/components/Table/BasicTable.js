@@ -1,15 +1,7 @@
 import React from 'react'
-
-import { useTable } from "react-table";
 import "./table.css";
 
 function BasicTable({ data, title }) {
-
-  // const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-  //   useTable({
-  //     columns,
-  //     data,
-  //   });
 
   return (
     <div className="tabel-data">
@@ -24,16 +16,6 @@ function BasicTable({ data, title }) {
                 {value}
               </th>)}
           </tr>
-          {/* {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
-              ))}
-            </tr>
-          ))} */}
-          <tr>
-
-          </tr>
         </thead>
         <tbody>
           {data.map((value, key) =>
@@ -43,18 +25,6 @@ function BasicTable({ data, title }) {
                   {items}
                 </td>)}
             </tr>)}
-          {/* {rows.map((row, i) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  );
-                })}
-              </tr>
-            );
-          })} */}
         </tbody>
       </table>
     </div>

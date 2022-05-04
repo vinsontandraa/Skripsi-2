@@ -1,12 +1,12 @@
 import './App.css';
 import BarChart from './components/BarChart';
-import { AppData } from './Data.js';
-import { ApacheData } from './ApacheData.js';
-import { NginxData } from './NginxData';
-import { PhpData } from './PhpData';
-import { PythonData } from './PythonData';
-import { JQMigrateData } from './JQueryMigrateData';
-import { JQueryData } from './JQueryData';
+import { AppData } from './json/Data.js';
+import { ApacheData } from './json/ApacheData.js';
+import { NginxData } from './json/NginxData';
+import { PhpData } from './json/PhpData';
+import { PythonData } from './json/PythonData';
+import { JQMigrateData } from './json/JQueryMigrateData';
+import { JQueryData } from './json/JQueryData';
 
 import BasicTable from './components/Table/BasicTable';
 import {URL_ALL_RESULT_TABLE} from "./json/url_all_result_table";

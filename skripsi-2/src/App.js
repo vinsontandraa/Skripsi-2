@@ -1,23 +1,23 @@
 import './App.css';
 import BarChart from './components/BarChart';
-import { AppData } from './json/Data.js';
-import { ApacheData } from './json/ApacheData.js';
-import { NginxData } from './json/NginxData';
-import { PhpData } from './json/PhpData';
-import { PythonData } from './json/PythonData';
-import { JQMigrateData } from './json/JQueryMigrateData';
-import { JQueryData } from './json/JQueryData';
+import { AppData } from './data/AppData.js';
+import { ApacheData } from './data/ApacheData.js';
+import { NginxData } from './data/NginxData';
+import { PhpData } from './data/PhpData';
+import { PythonData } from './data/PythonData';
+import { JQMigrateData } from './data/JQueryMigrateData';
+import { JQueryData } from './data/JQueryData';
 
 import BasicTable from './components/Table/BasicTable';
-import {URL_ALL_RESULT_TABLE} from "./json/url_all_result_table";
-import {CATEGORY_PER_UNSUPPORTED} from "./json/category_per_jumlah_unsupported";
-import {NUMSITES_APP_RESULT} from "./json/numsites_app_result";
+import {URL_ALL_RESULT_TABLE} from "./data/UrlAllResultTable";
+import {CATEGORY_PER_UNSUPPORTED} from "./data/CategoryPerJumlahUnsupported";
+import {NUMSITES_APP_RESULT} from "./data/NumsitesAppResult";
 
 //Create Measurement Color
 function color(arr) {
   let temp = [];
   for (let i = 0; i < arr.length; i++) {
-    arr[i].result === "UNSUPPORTED" ? temp.push("red") : temp.push("#0000FF"); //biru
+    arr[i].result === "UNSUPPORTED" ? temp.push("red") : temp.push("blue"); 
   }
   return temp
 }

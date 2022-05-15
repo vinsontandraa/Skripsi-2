@@ -13,17 +13,23 @@ import { URL_ALL_RESULT_TABLE } from "./data/UrlAllResultTable";
 import { CATEGORY_PER_UNSUPPORTED } from "./data/CategoryPerJumlahUnsupported";
 import { NUMSITES_APP_RESULT } from "./data/NumsitesAppResult";
 
-import compareVersions from "compare-versions";
-
-compareVersions("11.1.1", "10.0.0");
-compareVersions("10.0.0", "10.0.0");
-compareVersions("10.0.0", "11.1.1");
+import { MinSupport } from "./data/MinSupported";
+import { versionCompare } from "./StringComparison";
 
 //Create Measurement Color
 function color(arr) {
   let temp = [];
+  const minSupported = MinSupport.filter((val) => val.app === arr[0].app);
   for (let i = 0; i < arr.length; i++) {
-    arr[i].result === "UNSUPPORTED" ? temp.push("red") : temp.push("blue");
+    // arr[i].result === "UNSUPPORTED" ? temp.push("red") : temp.push("blue");
+    const dataType = versionCompare(arr[i].info, minSupported[0].min_supported);
+    if (dataType === "NON_CONCLUSIVE") {
+      temp.push("green");
+    } else if (dataType === "UNSUPPORTED") {
+      temp.push("red");
+    } else {
+      temp.push("blue");
+    }
   }
   return temp;
 }

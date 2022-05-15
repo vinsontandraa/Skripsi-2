@@ -1,27 +1,28 @@
-const versionCompare = (versionA, versionB) => {
-  if (versionA.length >= 10 || versionB.length >= 10) {
-    return "not valid input";
+export const versionCompare = (version, minSupport) => {
+  if (!/^(?![0.]+$)[A-Za-z0-9]+(?:.[A-Za-z0-9]+){0,2}$/.test(version)) {
+    return "NON_CONCLUSIVE";
   }
-  versionASplit = versionA.split(".");
-  versionBSplit = versionB.split(".");
-  majorA = parseInt(versionASplit[0]);
-  majorB = parseInt(versionBSplit[0]);
-  if (isNaN(versionA) || isNaN(versionB)) {
-    return "Non-Conclusive";
+  if (version.length >= 10 || minSupport.length >= 10) {
+    return "NON_CONCLUSIVE";
   }
+  const versionSplit = version.split(".");
+  const minSupportSplit = minSupport.split(".");
+  const majorA = parseInt(versionSplit[0]);
+  const majorB = parseInt(minSupportSplit[0]);
+
   if (majorA == majorB) {
-    minorA = parseInt(versionASplit[1]);
-    minorB = parseInt(versionBSplit[1]);
+    const minorA = parseInt(versionSplit[1]);
+    const minorB = parseInt(minSupportSplit[1]);
     if (minorA >= minorB) {
-      return "Supported";
+      return "SUPPORTED";
     } else {
-      return "Unsupported";
+      return "UNSUPPORTED";
     }
   } else {
     if (majorA >= majorB) {
-      return "Supported";
+      return "SUPPORTED";
     } else {
-      return "Unsporrted";
+      return "UNSUPPORTED";
     }
   }
 };

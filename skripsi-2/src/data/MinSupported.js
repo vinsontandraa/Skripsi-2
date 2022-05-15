@@ -1,4 +1,4 @@
-const MinSupport = [
+export const MinSupport = [
   { app: "Vue.js", min_supported: "2" },
   { app: "NextGEN Gallery", min_supported: "2" },
   { app: "jQuery", min_supported: "3" },

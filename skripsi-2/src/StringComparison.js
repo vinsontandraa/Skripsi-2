@@ -1,7 +1,4 @@
 const versionCompare = (versionA, versionB) => {
-  if (isNaN(versionA) || isNaN(versionB)) {
-    return "not valid input";
-  }
   if (versionA.length >= 10 || versionB.length >= 10) {
     return "not valid input";
   }
@@ -9,19 +6,22 @@ const versionCompare = (versionA, versionB) => {
   versionBSplit = versionB.split(".");
   majorA = parseInt(versionASplit[0]);
   majorB = parseInt(versionBSplit[0]);
+  if (isNaN(versionA) || isNaN(versionB)) {
+    return "Non-Conclusive";
+  }
   if (majorA == majorB) {
     minorA = parseInt(versionASplit[1]);
     minorB = parseInt(versionBSplit[1]);
     if (minorA >= minorB) {
-      return "supported";
+      return "Supported";
     } else {
-      return "unsupported";
+      return "Unsupported";
     }
   } else {
     if (majorA >= majorB) {
-      return "supported";
+      return "Supported";
     } else {
-      return "unsporrted";
+      return "Unsporrted";
     }
   }
 };

@@ -1,5 +1,5 @@
 import "./App.css";
-import BarChart from "./components/BarChart";
+import BarChart from "./components/Chart/BarChart";
 import { AppData } from "./data/AppData.js";
 import { ApacheData } from "./data/ApacheData.js";
 import { NginxData } from "./data/NginxData";
@@ -13,23 +13,30 @@ import { URL_ALL_RESULT_TABLE } from "./data/UrlAllResultTable";
 import { CATEGORY_PER_UNSUPPORTED } from "./data/CategoryPerJumlahUnsupported";
 import { NUMSITES_APP_RESULT } from "./data/NumsitesAppResult";
 
-import { MinSupport } from "./data/MinSupported";
-import { versionCompare } from "./StringComparison";
+// import { MinSupport } from "./data/MinSupported";
+// import { versionCompare } from "./StringComparison";
 
 //Create Measurement Color
 function color(arr) {
   let temp = [];
-  const minSupported = MinSupport.filter((val) => val.app === arr[0].app);
+  // const minSupported = MinSupport.filter((val) => val.app === arr[0].app);
   for (let i = 0; i < arr.length; i++) {
     // arr[i].result === "UNSUPPORTED" ? temp.push("red") : temp.push("blue");
-    const dataType = versionCompare(arr[i].info, minSupported[0].min_supported);
-    if (dataType === "NON_CONCLUSIVE") {
-      temp.push("green");
-    } else if (dataType === "UNSUPPORTED") {
+    if (arr[i].result === "SUPPORTED") {
+      temp.push("blue");
+    } else if (arr[i].result === "UNSUPPORTED") {
       temp.push("red");
     } else {
-      temp.push("blue");
+      temp.push("green");
     }
+    // const dataType = versionCompare(arr[i].info, minSupported[0].min_supported);
+    // if (dataType === "NON_CONCLUSIVE") {
+    //   temp.push("green");
+    // } else if (dataType === "UNSUPPORTED") {
+    //   temp.push("red");
+    // } else {
+    //   temp.push("blue");
+    // }
   }
   return temp;
 }

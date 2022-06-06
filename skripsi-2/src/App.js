@@ -1,147 +1,22 @@
-import "./App.css";
-import BarChart from "./components/Chart/BarChart";
-import { AppData } from "./data/AppData.js";
-import { ApacheData } from "./data/ApacheData.js";
-import { NginxData } from "./data/NginxData";
-import { PhpData } from "./data/PhpData";
-import { PythonData } from "./data/PythonData";
-import { JQMigrateData } from "./data/JQueryMigrateData";
-import { JQueryData } from "./data/JQueryData";
+import * as React from "react";
+import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import List from "./components/List";
+import Popular from "./components/Popular";
+import AppUrl from "./components/AppUrl";
 
-import BasicTable from "./components/Table/BasicTable";
-import { URL_ALL_RESULT_TABLE } from "./data/UrlAllResultTable";
-import { CATEGORY_PER_UNSUPPORTED } from "./data/CategoryPerJumlahUnsupported";
-import { NUMSITES_APP_RESULT } from "./data/NumsitesAppResult";
-
-// import { MinSupport } from "./data/MinSupported";
-// import { versionCompare } from "./StringComparison";
-
-//Create Measurement Color
-function color(arr) {
-  let temp = [];
-  // const minSupported = MinSupport.filter((val) => val.app === arr[0].app);
-  for (let i = 0; i < arr.length; i++) {
-    // arr[i].result === "UNSUPPORTED" ? temp.push("red") : temp.push("blue");
-    if (arr[i].result === "SUPPORTED") {
-      temp.push("blue");
-    } else if (arr[i].result === "UNSUPPORTED") {
-      temp.push("red");
-    } else {
-      temp.push("green");
-    }
-    // const dataType = versionCompare(arr[i].info, minSupported[0].min_supported);
-    // if (dataType === "NON_CONCLUSIVE") {
-    //   temp.push("green");
-    // } else if (dataType === "UNSUPPORTED") {
-    //   temp.push("red");
-    // } else {
-    //   temp.push("blue");
-    // }
-  }
-  return temp;
-}
-
-//Create Chart with JSON data
 function App() {
-  const appData = {
-    labels: AppData.map((data) => data.info),
-    datasets: [
-      {
-        label: "app",
-        data: AppData.map((data) => data.jumlah),
-        backgroundColor: ["orange"],
-      },
-    ],
-  };
-
-  const apacheData = {
-    labels: ApacheData.map((data) => data.info),
-    datasets: [
-      {
-        label: "Apache",
-        data: ApacheData.map((data) => data.jumlah),
-        backgroundColor: color(ApacheData),
-      },
-    ],
-  };
-
-  const nginxData = {
-    labels: NginxData.map((data) => data.info),
-    datasets: [
-      {
-        label: "Nginx",
-        data: NginxData.map((data) => data.jumlah),
-        backgroundColor: color(NginxData),
-      },
-    ],
-  };
-
-  const phpData = {
-    labels: PhpData.map((data) => data.info),
-    datasets: [
-      {
-        label: "PHP",
-        data: PhpData.map((data) => data.jumlah),
-        backgroundColor: color(PhpData),
-      },
-    ],
-  };
-
-  const pythonData = {
-    labels: PythonData.map((data) => data.info),
-    datasets: [
-      {
-        label: "Python",
-        data: PythonData.map((data) => data.jumlah),
-        backgroundColor: color(PythonData),
-      },
-    ],
-  };
-
-  const jqmigrateData = {
-    labels: JQMigrateData.map((data) => data.info),
-    datasets: [
-      {
-        label: "jQuery Migrate",
-        data: JQMigrateData.map((data) => data.jumlah),
-        backgroundColor: color(JQMigrateData),
-      },
-    ],
-  };
-
-  const jqueryData = {
-    labels: JQueryData.map((data) => data.info),
-    datasets: [
-      {
-        label: "jQuery",
-        data: JQueryData.map((data) => data.jumlah),
-        backgroundColor: color(JQueryData),
-      },
-    ],
-  };
-
   return (
-    <div className="App">
-      <BasicTable
-        data={CATEGORY_PER_UNSUPPORTED}
-        title="Number of Categories by Unsupported Version"
-      />
-      <BasicTable
-        data={URL_ALL_RESULT_TABLE}
-        title="Usage of technologies per site (top 10)"
-      />
-      <BasicTable
-        data={NUMSITES_APP_RESULT}
-        title="Top 10 popular technologies"
-      />
-      <BarChart chartData={appData} />
-      <BarChart chartData={apacheData} />
-      <BarChart chartData={nginxData} />
-      <BarChart chartData={phpData} />
-      <BarChart chartData={pythonData} />
-      <BarChart chartData={jqmigrateData} />
-      <BarChart chartData={jqueryData} />
-    </div>
+    <main className="app">
+      <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<List />} />
+          <Route path="/app-url" element={<AppUrl />} />
+          <Route path="/popular" element={<Popular />} />
+        </Routes>
+      </BrowserRouter>
+    </main>
   );
 }
 
